@@ -1,0 +1,24 @@
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2022.0.4")
+}
+
+dependencies {
+    implementation ('org.springframework.cloud:spring-cloud-config-server') {
+        because('Starter para configuração do Spring Cloud Config')
+    }
+
+    testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+        because('Starter para testes unitários com o Spring Boot')
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
