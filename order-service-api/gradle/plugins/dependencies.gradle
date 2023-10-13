@@ -13,17 +13,17 @@ dependencies {
         because('Starter para desenvolvimento de aplicativos web com Spring Boot')
     }
 
-//    implementation('org.springframework.cloud:spring-cloud-starter-config') {
-//        because('Starter para configuração do Spring Cloud Config')
-//    }
+    implementation('org.springframework.cloud:spring-cloud-starter-config') {
+        because('Starter para configuração do Spring Cloud Config')
+    }
 
 //    implementation ('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client') {
 //      because('Starter para integração com o Eureka Discovery Client')
 //    }
 
-//    implementation ('org.springframework.cloud:spring-cloud-starter-bootstrap') {
-//        because('Starter para configuração do Spring Cloud Config')
-//    }
+    implementation ('org.springframework.cloud:spring-cloud-starter-bootstrap') {
+        because('Starter para configuração do Spring Cloud Config')
+    }
 
     implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
         because('Starter para integração com o Spring Data JPA')
@@ -33,12 +33,12 @@ dependencies {
         because('Starter para validação de dados com o Spring Validation')
     }
 
-    implementation ('mysql:mysql-connector-java:8.0.32') {
-        because('Driver JDBC para conexão com o MySQL')
-    }
-
     implementation ('br.com.maikon:hd-commons-lib:1.0.0') {
         because('Biblioteca de classes em comum entre os componentes do projeto')
+    }
+
+    implementation ('org.postgresql:postgresql') {
+        because('Driver JDBC para conexão com o PostegreSQL')
     }
 
     compileOnly ('com.h2database:h2') {
@@ -47,7 +47,7 @@ dependencies {
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
     // Binding para o MapStruct com Lombok
     implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'

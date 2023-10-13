@@ -1,4 +1,4 @@
-package com.example.orderserviceapi;
+package br.com.maikon.orderserviceapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

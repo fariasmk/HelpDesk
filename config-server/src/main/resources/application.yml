@@ -6,8 +6,8 @@ spring:
       server:
         git:
           default-label: main
-          uri: ${CONFIG_SERVER_URI}
-          username: ${CONFIG_SERVER_USERNAME}
-          password: ${CONFIG_SERVER_PASSWORD}
+          uri: 'https://github.com/fariasmk/Help-Desk-Server-Configs'
+          username: 'fariasmk'
+          password: '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'
 server:
   port: ${PORT:8888}
