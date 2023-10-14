@@ -5,12 +5,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record CreateOrderRequest(
-        @Schema(description = "Requester ID", example = "64bb3bbe319d2b6e43ba05dd")
+        @Schema(description = "Requester ID", example = "651847bbea257047433f603e")
         @NotBlank(message = "The requesterId cannot be null or blank")
         @Size(min = 24, max = 36, message = "The requesterId must be between 24 and 36 characters")
         String requesterId,
 
-        @Schema(description = "Customer ID", example = "64bb3bbe319d2b6e43ba05dd")
+        @Schema(description = "Customer ID", example = "651847bbea257047433f603e")
         @NotBlank(message = "The customerId cannot be null or blank")
         @Size(min = 24, max = 36, message = "The customerId must be between 24 and 36 characters")
         String customerId,

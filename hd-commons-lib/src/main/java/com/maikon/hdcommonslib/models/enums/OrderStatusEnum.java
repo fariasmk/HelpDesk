@@ -19,7 +19,7 @@ public enum OrderStatusEnum {
     private final String description;
 
     public static OrderStatusEnum toEnum(final String description) {
-        return Arrays.stream(OrderStatusEnum.values())
+        return Arrays.stream(OrderStatusEnum.values())//Toda vez que e chamado faz uma lista nova de arrays
                 .filter(orderStatusEnum -> orderStatusEnum.getDescription().equals(description))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Invalid description: " + description));
