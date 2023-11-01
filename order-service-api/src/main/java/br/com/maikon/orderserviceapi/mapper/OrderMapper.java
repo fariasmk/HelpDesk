@@ -14,6 +14,7 @@ import org.mapstruct.Named;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.mapstruct.NullValueCheckStrategy.ALWAYS;
 import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
@@ -45,4 +46,6 @@ public interface OrderMapper {
     default LocalDateTime mapCreatedAt() {
         return LocalDateTime.now();
     }
+
+    List<OrderResponse> fromEntities(List<Order> orders);
 }

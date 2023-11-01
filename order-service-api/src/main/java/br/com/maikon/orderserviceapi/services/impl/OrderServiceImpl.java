@@ -10,7 +10,11 @@ import com.maikon.hdcommonslib.models.requests.UpdateOrderRequest;
 import com.maikon.hdcommonslib.models.responses.OrderResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import static com.maikon.hdcommonslib.models.enums.OrderStatusEnum.CLOSED;
 import static java.time.LocalDateTime.now;
@@ -49,5 +53,27 @@ public class OrderServiceImpl implements OrderService {
         }
 
         return mapper.fromEntity(repository.save(entity));
+    }
+
+    @Override
+    public void deleteById(final Long id) {
+        repository.delete(findById(id));
+    }
+
+    @Override
+    public List<Order> findAll() {
+        return repository.findAll();
+    }
+
+    @Override
+    public Page<Order> findAllPaginated(Integer page, Integer linesPerPage, String direction, String orderBy) {
+        PageRequest pageRequest = PageRequest.of(
+                page,
+                linesPerPage,
+                org.springframework.data.domain.Sort.Direction.valueOf(direction),
+                orderBy
+        );
+
+        return repository.findAll(pageRequest);
     }
 }
