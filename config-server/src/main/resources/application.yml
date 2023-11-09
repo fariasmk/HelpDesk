@@ -8,6 +8,6 @@ spring:
           default-label: main
           uri: 'https://github.com/fariasmk/Help-Desk-Server-Configs'
           username: 'fariasmk'
-          password: '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'
+          password: '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'
 server:
   port: ${PORT:8888}
