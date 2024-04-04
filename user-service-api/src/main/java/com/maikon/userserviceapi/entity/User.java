@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Set;
 
-@With//Permit que possa ser modificado apenas m atributo. Lombok
+@With//Permite que possa ser modificado apenas em atributo. Lombok
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
